@@ -9,7 +9,17 @@
 }
 
 .drop-down-menu {
-  padding: 15px 0 0 10px;
+  display: flex;
+  padding: 10px 0 0 10px;
+}
+
+label {
+  padding: 10px 0 0 10px;
+}
+
+.button {
+  display: flex;
+  padding: 10px 0 0 10px;
 }
 
 .footer {
@@ -34,7 +44,15 @@ h1 {
 
 /* Mobile Styles */
 @media only screen and (max-width: 800px) {
-
+  .drop-down-menu {
+    justify-content: center;
+  }
+  label {
+    padding: 75px;
+  }
+  .button {
+    justify-content: center;
+  }
 }
 
 /* Desktop Styles */
