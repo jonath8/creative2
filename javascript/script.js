@@ -10,7 +10,9 @@ function onClick(e) {
 
   // setup URL
   //let url = "http://numberapi.com/" + number + "/" + "type" + "?json";
-  let url = "https://elephant-api.herokuapp.com/";
+  let url = "https://cors-anywhere.herokuapp.com";
+  url += "/elephant-api.herokuapp.com/";
+  //let url = "https://elephant-api.herokuapp.com/";
   if (type === "random") {
     url += "elephants/random";
   }
@@ -27,7 +29,7 @@ function onClick(e) {
     url += "elephants";
   }
   // call API
-  fetch(url)
+  fetch(url, {mode: 'cors'})
     .then(function(response) {
       // make sure the request was successful
       if (response.status != 200) {
