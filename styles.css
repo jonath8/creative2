@@ -47,8 +47,8 @@ h1 {
   .drop-down-menu {
     justify-content: center;
   }
-  label {
-    padding: 75px;
+  .search-menu {
+    text-align: center;
   }
   .button {
     justify-content: center;
