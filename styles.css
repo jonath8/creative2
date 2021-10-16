@@ -3,3 +3,41 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.title {
+  background-color: #c8a383;
+}
+
+.drop-down-menu {
+  padding: 15px 15px
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 25px;
+  color: #000;
+  padding-bottom: 15px;
+}
+
+body {
+  background-color: #ac9d7f;
+}
+
+h1 {
+  color: #42423d;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 800px) {
+
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 801px) {
+
+}

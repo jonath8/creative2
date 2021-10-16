@@ -4,22 +4,36 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zelda Fact Searcher</title>
+  <title>Elphant Fact Finder</title>
   <link rel="stylesheet" href="/styles.css">
 </head>
 
 <body>
-
-  <h1>Elephant Geek for Geeks</h1>
+  <div class='title'>
+    <h1>Elephant Geek for Geeks</h1>
+  </div>
 
   <form>
+    <div class='drop-down-menu'>
+      <select id="selector">
+        <option value="random">Random</option>
+        <option value="name">Name</option>
+        <option value="sex">Sex</option>
+        <option value="species">Species</option>
+        <option value="zy">Species</option>
+      </select>
+  </div>
+  <br>
+  <div class='search-menu'>
     <label>Enter Elephant Information</label>
-
-    <input id="elephantInput" type="text"></input><br/>
-    <input id="elephantSubmit" type="submit" value="Submit"></input>
-
+    <input id="elephantInput" type="text">
+  </div>
+    <br>
+  <div class='button'>
+    <button id="elephants" class="pure-button pure-button-primary">ELEPHANTS!</button>
+  </div>
   </form>
-  <div id="gameResults">
+  <div id="elephantResults">
   </div>
 
   <div class = "footer"><a href = "https://github.com/jonath8/creative2.git">https://github.com/jonath8/creative2.git</div>
