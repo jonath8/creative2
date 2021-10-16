@@ -1,6 +1,7 @@
 function onClick(e) {
   debugger
   e.preventDefault();
+  console.log("HI");
   // get form values
   let elephantInput = document.getElementById('elephantInput').value;
   let s = document.getElementById('selector');
@@ -12,13 +13,17 @@ function onClick(e) {
   let url = "https://elephant-api.herokuapp.com/";
   if (type === "random") {
     url += "elephants/random";
-  } elseif (type === "name") {
+  }
+  if (type === "name") {
     url += "elephants/name/" + elephantInput;
-  } elseif (type === "sex") {
+  }
+  if (type === "sex") {
     url += "elephants/sex/" + elephantInput;
-  } elseif (type === "species") {
+  }
+  if (type === "species") {
     url += "species/" + elephantInput;
-  } else {
+  }
+  if (type === "all") {
     url += "elephants";
   }
   // call API
