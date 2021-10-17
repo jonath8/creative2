@@ -39,7 +39,30 @@ function onClick(e) {
       }
       return response.json();
     }).then(function(json) {
-      console.log("this functioned")
+      if (json.text === undefined) {
+        let results = ""
+        if (type === "random") {
+
+        }
+        if (type === "name") {
+
+        }
+        if (type === "sex") {
+
+        }
+        if (type === "species") {
+
+        }
+        if (type === "all") {
+          for (let i=0; i < 47; i++) {
+            results += "<p>" + json[i].name + "</p>";
+          }
+        }
+        document.getElementById("elephantResults").innerHTML = results;
+      }
+      else {
+        console.log(json.text)
+      }
     });
 }
 
