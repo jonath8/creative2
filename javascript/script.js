@@ -9,21 +9,13 @@ function onClick(e) {
 
 
   // setup URL
-  //let url = "http://numberapi.com/" + number + "/" + "type" + "?json";
   let url = "https://cors-anywhere.herokuapp.com";
   url += "/elephant-api.herokuapp.com/";
-  //let url = "https://elephant-api.herokuapp.com/";
-  if (type === "random") {
-    url += "elephants/random";
-  }
   if (type === "name") {
     url += "elephants/name/" + elephantInput;
   }
   if (type === "sex") {
     url += "elephants/sex/" + elephantInput;
-  }
-  if (type === "species") {
-    url += "species/" + elephantInput;
   }
   if (type === "all") {
     url += "elephants";
@@ -41,22 +33,61 @@ function onClick(e) {
     }).then(function(json) {
       if (json.text === undefined) {
         let results = ""
-        if (type === "random") {
-
-        }
         if (type === "name") {
+//           affiliation: "Adam Forepaugh Circus"
+// dob: "1860"
+// dod: "1932"
+// fictional: "false"
+// image: "https://elephant-api.herokuapp.com/pictures/016.jpg"
+// index: 16
+// name: "John L. Sullivan"
+// note: "A boxing elephant in Adam Forepaugh's circus."
+// sex: "Male"
+// species: "Asian"
+// wikilink: "https://en.wikipedia.org/wiki/John_L._Sullivan_(elephant)"
+// _id: "5cf1d1ef9bf1ce2d0844d8c6"
+          results += "<img src=\'" + json.image + "\'/>";
 
         }
         if (type === "sex") {
-
-        }
-        if (type === "species") {
-
+          results += "<div id=\'elephantList\'>";
+          results += "<div id=\'elephantItem\'>"
+          results += "<a id=\'entry\'>Name</a>";
+          results += "<a id=\'entry\'>Sex</a>";
+          results += "<a id=\'entry\'>Species</a>";
+          results += "<a id=\'entry\'>Born</a>";
+          results += "<a id=\'entry\'>Died</a>";
+          results += "</div>";
+          for (let i=0; i < Object.keys(json).length; i++) {
+            results += "<div id=\'elephantItem\'>";
+            results += "<a id=\'entry\'>" + json[i].name + "</a>";
+            results += "<a id=\'entry\'>" + json[i].sex + "</a>";
+            results += "<a id=\'entry\'>" + json[i].species + "</a>";
+            results += "<a id=\'entry\'>" + json[i].dob + "</a>";
+            results += "<a id=\'entry\'>" + json[i].dod + "</a>";
+            results += "</div>";
+          }
+          results += "</div>";
         }
         if (type === "all") {
+          results += "<div id=\'elephantList\'>";
+          results += "<div id=\'elephantItem\'>"
+          results += "<a id=\'entry\'>Name</a>";
+          results += "<a id=\'entry\'>Sex</a>";
+          results += "<a id=\'entry\'>Species</a>";
+          results += "<a id=\'entry\'>Born</a>";
+          results += "<a id=\'entry\'>Died</a>";
+          results += "</div>";
           for (let i=0; i < 47; i++) {
-            results += "<p>" + json[i].name + "</p>";
+            results += "<div id=\'elephantItem\'>";
+            results += "<a id=\'entry\'>" + json[i].name + "</a>";
+            results += "<a id=\'entry\'>" + json[i].sex + "</a>";
+            results += "<a id=\'entry\'>" + json[i].species + "</a>";
+            results += "<a id=\'entry\'>" + json[i].dob + "</a>";
+            results += "<a id=\'entry\'>" + json[i].dod + "</a>";
+            results += "</div>";
           }
+          results += "</div>";
         }
         document.getElementById("elephantResults").innerHTML = results;
       }
