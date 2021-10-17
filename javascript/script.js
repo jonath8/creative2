@@ -1,11 +1,18 @@
 function onClick(e) {
-  debugger
   e.preventDefault();
   console.log("HI");
   // get form values
   let elephantInput = document.getElementById('elephantInput').value;
   let s = document.getElementById('selector');
   let type = s.options[s.selectedIndex].value;
+
+  debugger
+
+  for(let i = 0; i < elephantInput.length; i++) {
+    if(elephantInput.charAt(i) === " ") {
+      elephantInput = elephantInput.slice(0, i) + "_" + elephantInput.slice(i+1, elephantInput.length);
+    }
+  }
 
 
   // setup URL
@@ -34,20 +41,15 @@ function onClick(e) {
       if (json.text === undefined) {
         let results = ""
         if (type === "name") {
-//           affiliation: "Adam Forepaugh Circus"
-// dob: "1860"
-// dod: "1932"
-// fictional: "false"
-// image: "https://elephant-api.herokuapp.com/pictures/016.jpg"
-// index: 16
-// name: "John L. Sullivan"
-// note: "A boxing elephant in Adam Forepaugh's circus."
-// sex: "Male"
-// species: "Asian"
-// wikilink: "https://en.wikipedia.org/wiki/John_L._Sullivan_(elephant)"
-// _id: "5cf1d1ef9bf1ce2d0844d8c6"
           results += "<img src=\'" + json.image + "\'/>";
-
+          results += "<h1>" + json.name + "</h1>";
+          results += "<h2>" + json.note + "</h2>";
+          results += "<div id=\'dates\'><a>Birth</a><a>Death</a></div>"
+          results += "<div id=\'dates\'><a>" + json.dob + "</a><a>" + json.dod + "</a></div>";
+          results += "<div id=\'otherInfo\'><a>Sex: " + json.sex + "</a>";
+          results += "<a>Species: " + json.species + "</a><a>Fictional: " + json.fictional;
+          results += "</a><a>Affiliation: " + json.affiliation;
+          results += "</a><a href=\'" + json.wikilink + "\'>Wikipedia Article</a></div>";
         }
         if (type === "sex") {
           results += "<div id=\'elephantList\'>";
@@ -92,7 +94,7 @@ function onClick(e) {
         document.getElementById("elephantResults").innerHTML = results;
       }
       else {
-        console.log(json.text)
+        document.getElementById("elephantResults").innerHTML = json.text;
       }
     });
 }
