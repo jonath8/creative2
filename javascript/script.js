@@ -41,11 +41,17 @@ function onClick(e) {
       if (json.text === undefined) {
         let results = ""
         if (type === "name") {
-          results += "<img src=\'" + json.image + "\'/>";
+          results += "<div id=elephantImage>"
+          results += "<img src=\'" + json.image + "\'>";
+          results += "</div>"
           results += "<h1>" + json.name + "</h1>";
           results += "<h2>" + json.note + "</h2>";
-          results += "<div id=\'dates\'><a>Birth</a><a>Death</a></div>"
-          results += "<div id=\'dates\'><a>" + json.dob + "</a><a>" + json.dod + "</a></div>";
+          results += "<div id=\'info\'>"
+          results += "<div id=\'dates-header\'>Birth</div>"
+          results += "<div id=\'dates\'>" + json.dob + "</div>"
+          results += "<div id=\'dates-header\'>Death</div>"
+          results += "<div id=\'dates\'>" + json.dod + "</div>";
+          results += "</div>"
           results += "<div id=\'otherInfo\'><a>Sex: " + json.sex + "</a>";
           results += "<a>Species: " + json.species + "</a><a>Fictional: " + json.fictional;
           results += "</a><a>Affiliation: " + json.affiliation;
@@ -54,11 +60,11 @@ function onClick(e) {
         if (type === "sex") {
           results += "<div id=\'elephantList\'>";
           results += "<div id=\'elephantItem\'>"
-          results += "<a id=\'entry\'>Name</a>";
-          results += "<a id=\'entry\'>Sex</a>";
-          results += "<a id=\'entry\'>Species</a>";
-          results += "<a id=\'entry\'>Born</a>";
-          results += "<a id=\'entry\'>Died</a>";
+          results += "<a id=\'entry-header\'>Name</a>";
+          results += "<a id=\'entry-header\'>Sex</a>";
+          results += "<a id=\'entry-header\'>Species</a>";
+          results += "<a id=\'entry-header\'>Born</a>";
+          results += "<a id=\'entry-header\'>Died</a>";
           results += "</div>";
           for (let i=0; i < Object.keys(json).length; i++) {
             results += "<div id=\'elephantItem\'>";
@@ -74,11 +80,11 @@ function onClick(e) {
         if (type === "all") {
           results += "<div id=\'elephantList\'>";
           results += "<div id=\'elephantItem\'>"
-          results += "<a id=\'entry\'>Name</a>";
-          results += "<a id=\'entry\'>Sex</a>";
-          results += "<a id=\'entry\'>Species</a>";
-          results += "<a id=\'entry\'>Born</a>";
-          results += "<a id=\'entry\'>Died</a>";
+          results += "<a id=\'entry-header\'>Name</a>";
+          results += "<a id=\'entry-header\'>Sex</a>";
+          results += "<a id=\'entry-header\'>Species</a>";
+          results += "<a id=\'entry-header\'>Born</a>";
+          results += "<a id=\'entry-header\'>Died</a>";
           results += "</div>";
           for (let i=0; i < 47; i++) {
             results += "<div id=\'elephantItem\'>";
