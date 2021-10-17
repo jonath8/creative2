@@ -56,21 +56,6 @@ h1 {
   align-items: center;
 }
 
-#entry-header {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 25px;
-  padding: 2px;
-  text-align: center;
-  width: 15%;
-}
-
-#entry {
-  padding: 2px;
-  text-align: center;
-  width: 15%;
-}
-
 #elephantImage {
   display: flex;
   width: 100%;
@@ -80,7 +65,7 @@ h1 {
 h2 {
   display: flex;
   justify-content: center;
-  padding: 10px;  
+  padding: 10px;
 }
 
 #dates-header {
@@ -111,7 +96,14 @@ a {
   font-size: 20px;
 }
 
+#elephantItem {
+  display: flex;
+  justify-content: space-around;
+}
 
+#entry {
+  width: 20%;
+}
 
 /* Mobile Styles */
 @media only screen and (max-width: 800px) {
@@ -124,12 +116,39 @@ a {
   .button {
     justify-content: center;
   }
-  h2 {
-    justify-content: center;
+
+  #entry-header {
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+  }
+  #entry {
+    padding-bottom: 3px;
+    text-align: center;
+  }
+  img {
+    width: 100%;
+  }
+  #elephantImage {
+    width: 100%;
   }
 }
 
 /* Desktop Styles */
 @media only screen and (min-width: 801px) {
+  #entry-header {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 2px;
+    text-align: center;
+    width: 15%;
+  }
 
+  #entry {
+    padding: 2px;
+    text-align: center;
+    width: 15%;
+  }
 }

@@ -1,13 +1,9 @@
 function onClick(e) {
   e.preventDefault();
-  console.log("HI");
   // get form values
   let elephantInput = document.getElementById('elephantInput').value;
   let s = document.getElementById('selector');
   let type = s.options[s.selectedIndex].value;
-
-  debugger
-
   for(let i = 0; i < elephantInput.length; i++) {
     if(elephantInput.charAt(i) === " ") {
       elephantInput = elephantInput.slice(0, i) + "_" + elephantInput.slice(i+1, elephantInput.length);
@@ -63,16 +59,16 @@ function onClick(e) {
           results += "<a id=\'entry-header\'>Name</a>";
           results += "<a id=\'entry-header\'>Sex</a>";
           results += "<a id=\'entry-header\'>Species</a>";
-          results += "<a id=\'entry-header\'>Born</a>";
-          results += "<a id=\'entry-header\'>Died</a>";
+          //results += "<a id=\'entry-header\'>Born</a>";
+          //results += "<a id=\'entry-header\'>Died</a>";
           results += "</div>";
           for (let i=0; i < Object.keys(json).length; i++) {
             results += "<div id=\'elephantItem\'>";
             results += "<a id=\'entry\'>" + json[i].name + "</a>";
             results += "<a id=\'entry\'>" + json[i].sex + "</a>";
             results += "<a id=\'entry\'>" + json[i].species + "</a>";
-            results += "<a id=\'entry\'>" + json[i].dob + "</a>";
-            results += "<a id=\'entry\'>" + json[i].dod + "</a>";
+            //results += "<a id=\'entry\'>" + json[i].dob + "</a>";
+            //results += "<a id=\'entry\'>" + json[i].dod + "</a>";
             results += "</div>";
           }
           results += "</div>";
@@ -83,16 +79,16 @@ function onClick(e) {
           results += "<a id=\'entry-header\'>Name</a>";
           results += "<a id=\'entry-header\'>Sex</a>";
           results += "<a id=\'entry-header\'>Species</a>";
-          results += "<a id=\'entry-header\'>Born</a>";
-          results += "<a id=\'entry-header\'>Died</a>";
+          //results += "<a id=\'entry-header\'>Born</a>";
+          //results += "<a id=\'entry-header\'>Died</a>";
           results += "</div>";
           for (let i=0; i < 47; i++) {
             results += "<div id=\'elephantItem\'>";
             results += "<a id=\'entry\'>" + json[i].name + "</a>";
             results += "<a id=\'entry\'>" + json[i].sex + "</a>";
             results += "<a id=\'entry\'>" + json[i].species + "</a>";
-            results += "<a id=\'entry\'>" + json[i].dob + "</a>";
-            results += "<a id=\'entry\'>" + json[i].dod + "</a>";
+            //results += "<a id=\'entry\'>" + json[i].dob + "</a>";
+            //results += "<a id=\'entry\'>" + json[i].dod + "</a>";
             results += "</div>";
           }
           results += "</div>";
